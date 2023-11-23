@@ -1,22 +1,39 @@
-﻿@model List<Product>
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
 @{
-    ViewData["Title"] = "Products";
 }
+@model Teams;
+<h1>Add New Team</h1>
+<form asp-action="AddProduct" asp-controller="Product" method="post">
 
-<div>
 
-    <table>
-        <tr>
-            <th width="200px">Name</th>
-            <th width="200px">Price</th>
-        </tr>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.Name</td>
-                <td>@item.PesoPrice</td>
-            </tr>
-        }
-    </table>
-</div>
 
+    <div class="row">
+        <div class="form-group col">
+            <label asp-for="Name">Name</label>
+            <input type="text" class="form-control" asp-for="Name">
+        </div>
+        <div class="form-group col">
+            <label asp-for="Coach">Coach</label>
+            <input type="text" class="form-control" asp-for="Coach">
+        </div>
+        <div class="form-group col">
+            <label asp-for="City">City</label>
+            <input type="text" class="form-control" asp-for="City">
+        </div>
+        <div class="form-group col">
+            <label asp-for="Barangay">Barangay</label>
+            <input type="text" class="form-control" asp-for="Barangay">
+        </div> <div class="form-group col">
+
+            <label asp-for="DateFormed">DataFormed</label>
+            <input type="text" class="form-control" asp-for="DateFormed">
+        </div>
+    </div>
+
+    
+    <center><button type="submit" class="btn btn-primary">Submit</button></center>
+</form>
+
+<a class="btn btn-dark" type="button" asp-controller="Product" asp-action="Index">Go Back</a>

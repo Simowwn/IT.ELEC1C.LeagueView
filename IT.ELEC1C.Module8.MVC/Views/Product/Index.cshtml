@@ -1,0 +1,37 @@
+﻿@model List<Teams>
+@{
+    ViewData["Title"] = "Teams";
+}
+
+<div>
+    <table>
+        <tr>
+            <th width="200px">ID</th>
+            <th width="200px">Name</th>
+            <th width="200px">Coach</th>
+            <th width="200px">City</th>
+            <th width="200px">Barangay</th>
+            <th width="200px">DateFormed</th>
+
+
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Name</td>
+                <td>@item.Coach</td>
+                <td>@item.City</td>
+                <td>@item.Barangay</td>
+                <td>@item.DateFormed</td>
+
+
+                <td></td>
+                <td><a class="btn btn-info" asp-action="UpdateProduct" asp-route-id="@item.ID">Update</a></td>
+                <td><a class="btn btn-danger" asp-action="DeleteProduct" asp-route-id="@item.ID">Delete</a></td>
+            </tr>
+        }
+    </table>
+</div>
+
+<a class="btn btn-dark" asp-controller="Product" asp-action="AddProduct">Add Teams</a>

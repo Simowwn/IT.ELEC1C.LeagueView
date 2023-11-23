@@ -1,4 +1,4 @@
-﻿namespace IT.ELEC1C.Module8.MVCSample1.Models;
+﻿namespace IT.ELEC1C.LeagueView.MVC.Models;
 
 public class ErrorViewModel
 {

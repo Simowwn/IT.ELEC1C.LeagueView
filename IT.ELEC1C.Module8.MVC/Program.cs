@@ -1,7 +1,20 @@
-﻿var builder = WebApplication.CreateBuilder(args);
+﻿using IT.ELEC1C.LeagueView.MVC.Data;
+using IT.ELEC1C.LeagueView.MVC.Services;
+using Microsoft.EntityFrameworkCore;
+
+var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IProductDataService, ProductDataService>();
+
+builder.Services.AddScoped<IPlayerDataService, PlayerDataService>();
+builder.Services.AddScoped<ICityDataService, CityDataService>();
+builder.Services.AddScoped<IUsersDataService, UsersDataService>();
 
 var app = builder.Build();
 

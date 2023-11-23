@@ -1,10 +1,13 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@{
+}
 @model Teams;
 @if (Model != null)
 {
-    <form asp-action="UpdateProduct" asp-controller="Product" method="post">
+    <h2>Are you sure you want to delete @Model.Name?</h2>
+    <form asp-action="DeleteProduct" asp-controller="Product" method="post">
 
         <div class="row">
             <div class="form-group col">
@@ -24,11 +27,12 @@
                 <input type="text" class="form-control" asp-for="Barangay">
             </div> <div class="form-group col">
 
-                <label asp-for="DateFormed">DataFormed</label>
+                <label asp-for="DateFormed">DateFormed</label>
                 <input type="text" class="form-control" asp-for="DateFormed">
             </div>
         </div>
-        <center><button type="submit" class="btn btn-info">Update</button></center>
+
+        <center><button type="submit" class="btn btn-danger">Delete</button></center>
     </form>
 }
 else

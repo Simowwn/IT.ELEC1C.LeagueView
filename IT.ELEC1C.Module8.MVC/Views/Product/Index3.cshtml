@@ -1,0 +1,25 @@
+﻿@model List<City>
+@{
+    ViewData["Title"] = "City";
+}
+
+<div>
+    <table>
+        <tr>
+            <th width="200px">ID</th>
+            <th width="200px">Name</th>
+            <th width="200px">ZipCode</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ID</td>
+                <td>@item.Name</td>
+                <td>@item.ZipCode</td>
+                <td></td>
+
+            </tr>
+        }
+    </table>
+</div>
